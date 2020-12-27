@@ -1,0 +1,14 @@
+﻿@model List<Hospital>
+
+<h1 style="color: dodgerblue">Lista de Hospitales SQL Server</h1>
+<a asp-controller="Hospitales" asp-action="Create">Nuevo hospital</a>
+@Html.ActionLink("Eliminar hospital", "Delete", "Hospitales")
+<br />
+@foreach (Hospital h in Model)
+{
+    <h3>
+        @h.Nombre 
+        <small>@Html.ActionLink("Detalles", "Details", "Hospitales", new { idhosp = h.IdHospital })</small>
+        <small>@Html.ActionLink("Editar", "Edit", "Hospitales", new { idhospi = h.IdHospital })</small>
+    </h3>
+}

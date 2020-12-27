@@ -1,0 +1,24 @@
+﻿@model List<Hospital>
+@{
+    Hospital hospital = ViewData["hospital"] as Hospital;
+}
+<h1>Hosptial detalles</h1>
+<form method="post">
+    <label>Hospitales</label>
+    <select name="id" class="form-control">
+        @foreach (Hospital hosp in Model)
+        {
+            <option value="@hosp.IdHospital">@hosp.Nombre</option>
+        }
+    </select>
+    <button type="submit" class="btn-info">Mostrar detalles</button>
+</form>
+<hr />
+@if (hospital != null)
+{
+    <h1>DATOS:</h1>
+    <h2 style="color: forestgreen">@hospital.Nombre</h2>
+    <h2 style="color: dodgerblue">@hospital.Direccion</h2>
+    <h2 style="color: palevioletred">@hospital.Telefono</h2>
+    <h2 style="color: orangered">@hospital.Camas</h2>
+}

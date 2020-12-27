@@ -1,0 +1,16 @@
+﻿@model Hospital
+
+<h1>Edit</h1>
+<form method="post">
+    <label>Código hospital: </label>
+    <input type="text" name="idhospital" class="form-control" value="@Model.IdHospital" readonly />
+    <label>Nombre: </label>
+    <input type="text" name="nombre" class="form-control" value="@Model.Nombre" />
+    <label>Direccion: </label>
+    <input type="text" name="direccion" class="form-control" value="@Model.Direccion" />
+    <label>Teléfono: </label>
+    <input type="text" name="telefono" class="form-control" value="@Model.Telefono" />
+    <lable>Camas: </lable>
+    <input type="number" name="camas" class="form-control" value="@Model.Camas" />
+    <button type="submit" class="btn-success">Modificar</button>
+</form>

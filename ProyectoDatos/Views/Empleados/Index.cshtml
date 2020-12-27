@@ -1,0 +1,22 @@
+﻿@model List<Empleado>
+<h1>Empleados LINQ</h1>
+<a asp-controller="Empleados" asp-action="Buscador" style="color: lawngreen">Buscador empleados</a>
+<table class="table table-bordered table-primary">
+    <thead>
+        <tr>
+            <th>Apellido</th>
+            <th>Oficio</th>
+            <th>Detalles</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Empleado emp in Model)
+        {
+            <tr>
+                <td>@emp.Apellido</td>
+                <td>@emp.Oficio</td>
+                <td>@Html.ActionLink("Ver detalles", "Details", "Empleados", new { idemp = emp.IdEmpleado })</td>
+            </tr>
+        }
+    </tbody>
+</table>
